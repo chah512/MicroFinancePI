@@ -21,7 +21,7 @@ public class ShareHolder implements Serializable {
     private double investment;
     private String Email;
     private int numTel;
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private TypeShareholder partner;
     @ManyToOne
     private Event event;

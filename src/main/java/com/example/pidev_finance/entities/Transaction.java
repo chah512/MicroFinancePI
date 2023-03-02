@@ -18,7 +18,9 @@ public class Transaction implements Serializable {
     private Integer id_transaction;
     private String visualisation;
     private Date date_transaction;
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private Type_transaction type;
+    @ManyToOne
+    private Investissement investissement;
 
 }

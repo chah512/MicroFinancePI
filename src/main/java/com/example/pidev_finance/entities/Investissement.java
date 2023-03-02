@@ -2,12 +2,11 @@ package com.example.pidev_finance.entities;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
+
 @Getter
 @Setter
 @ToString
@@ -22,4 +21,6 @@ public class Investissement implements Serializable {
     private Integer id_client;
     private Integer amount_inv;
     private Date date_inv;
+    @OneToMany(mappedBy ="Investissment" )
+    private List<Transaction> transactions ;
 }

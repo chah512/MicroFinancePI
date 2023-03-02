@@ -3,10 +3,7 @@ package com.example.pidev_finance.entities;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 @Getter
@@ -25,4 +22,8 @@ public class Request implements Serializable {
     private String statut;
     private String description;
     private String gender;
+    @ManyToOne
+    private Offers_Credit offers_credit;
+
+
 }

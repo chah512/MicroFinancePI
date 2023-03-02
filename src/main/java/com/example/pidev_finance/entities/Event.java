@@ -2,10 +2,11 @@ package com.example.pidev_finance.entities;
 
 
 import lombok.*;
+import org.springframework.cglib.core.Local;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 @Getter
@@ -23,8 +24,8 @@ public class Event implements Serializable {
     private int idEvent;
     private String nameEvent;
     private String descriptionEvent;
-    private Date dateEvent;
-    @Enumerated
+    private LocalDate dateEvent;
+    @Enumerated(EnumType.STRING)
     private TypeEvent type;
     @OneToMany(mappedBy ="event" )
     private List<ShareHolder> shareHolders;
