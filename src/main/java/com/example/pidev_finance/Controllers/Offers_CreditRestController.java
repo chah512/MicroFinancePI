@@ -5,6 +5,7 @@ import com.example.pidev_finance.services.Offers_CreditService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+
 import java.util.List;
 
 @RestController
@@ -34,4 +35,6 @@ public class Offers_CreditRestController {
     Offers_Credit updateOffers_Credit(@RequestBody Offers_Credit offers_credit){
         return offers_creditService.updateOffers_Credit(offers_credit);
     }
+
+
 }

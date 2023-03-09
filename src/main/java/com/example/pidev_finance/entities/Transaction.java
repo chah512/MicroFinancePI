@@ -24,5 +24,6 @@ public class Transaction implements Serializable {
     private MethodType method;
     @Enumerated(EnumType.STRING)
     private Status_Tr status;
-
+    @ManyToOne
+    private Investment investment;
 }
