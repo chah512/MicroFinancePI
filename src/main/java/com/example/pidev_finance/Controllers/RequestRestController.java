@@ -39,9 +39,9 @@ public class RequestRestController {
         return requestService.updateRequest(request);
     }
 
-    @GetMapping("/assignreqtooffers_credit/{id_request}/{id_offer}")
-    public Request assignreqtooffers_credit(@PathVariable("id_request") Integer id_request, @PathVariable("id_offer") Integer id_offer){
-        return requestService.assignRequestToOffers_Credit(id_request,id_offer);
+    @GetMapping("/assignreqtooffers_credit/{id_request}/{id_offer}/{id_user}")
+    public Request assignreqtooffers_credit(@PathVariable("id_request") Integer id_request, @PathVariable("id_offer") Integer id_offer,@PathVariable("id_user") Integer id_user){
+        return requestService.assignRequestToOffers_Credit(id_request,id_offer,id_user);
     }
 
     }

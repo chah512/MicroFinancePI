@@ -4,7 +4,6 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
 import java.util.List;
 
 @Getter
@@ -20,10 +19,21 @@ public class Offers_Credit implements Serializable {
     private Integer id_offer;
     @Enumerated(EnumType.STRING)
     private Type_of_credit credit;
-    private Integer amount;
-    private String interest;
-    private Date date_creation;
-    @OneToMany(mappedBy ="offers_credit" )
+    private Integer max_amount;
+    private Integer min_amount;
+    private String interest_rate;
+    private String date_creation;
+    private String repayment_period;
+
+
+
+    @OneToMany(mappedBy ="offer" )
     private List<Request> requests;
+
+
+
+
+
+
 
 }

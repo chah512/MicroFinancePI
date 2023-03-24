@@ -5,7 +5,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
+
 @Getter
 @Setter
 @ToString
@@ -17,13 +17,20 @@ public class Request implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_request;
-    private Date request_date;
-    private Integer rising;
+    private String request_date;
+    private Integer amount_req;
     private String statut;
     private String description;
     private String gender;
+    private Integer monthly_pay;
+    private Integer term_loan;
+    private String start_repayment;
     @ManyToOne
-    private Offers_Credit offers_credit;
 
+    @JoinColumn(name = "id_offer")
+    private Offers_Credit offer;
+    @ManyToOne
 
+    @JoinColumn(name = "id_user")
+    private User user;
 }

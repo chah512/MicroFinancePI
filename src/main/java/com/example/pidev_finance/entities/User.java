@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Getter
 @Setter
@@ -25,5 +26,7 @@ public class User implements Serializable {
     private String profile_picture;
     private String user_phone;
     private String Fn_rapport;
-    private String badge;
+    private Float amount;
+    @OneToMany(mappedBy ="user" )
+    private List<Request> requests;
 }
