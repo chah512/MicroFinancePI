@@ -35,9 +35,9 @@ public class InvestissementRestController {
     Investment UpdateInvestissement(@RequestBody Investment investment){
         return investmentService.UpdateInvestissement(investment);
     }
-    @PostMapping("/invest")
-    public ResponseEntity<Investment> invest(@RequestParam Integer clientId, @RequestParam Integer amount) {
-        Investment investment = investmentService.invest(clientId, amount);
+    @PostMapping("/pret")
+    public ResponseEntity<Investment> pret(@RequestParam Integer clientId, @RequestParam Integer amount) {
+        Investment investment = investmentService.pret(clientId, amount);
         return ResponseEntity.ok().body(investment);
     }
 }

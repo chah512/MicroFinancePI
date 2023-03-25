@@ -19,8 +19,11 @@ public class Investment implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_invest;
     private Integer id_client;
-    private Integer amount_inv;
+    private Float amount_inv;
     private Date date_inv;
+    private Date date_fin;
     @OneToMany(mappedBy = "investment")
     private List<Transaction> transactions;
+    @ManyToOne
+    private User user;
 }

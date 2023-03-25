@@ -20,10 +20,13 @@ public class Transaction implements Serializable {
     private Date date_transaction;
     @Enumerated(EnumType.STRING)
     private Type_transaction type;
+    private Float value;
     @Enumerated(EnumType.STRING)
     private MethodType method;
     @Enumerated(EnumType.STRING)
     private Status_Tr status;
     @ManyToOne
     private Investment investment;
+    @ManyToOne
+    private User user;
 }
